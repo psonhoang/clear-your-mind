@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Clear your mind!</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="particles-js">
+            <div class="wrapper">
+                <div class="eyeLeft"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="particles.js"></script>
+        <script type="text/javascript" src="dreamControl.js"></script>
+        <script>
+            const colors = [
+                "#f8c4fc",
+                "#f79083",
+                "#7ab3e8",
+                "#c1e1ff",
+                "#ac70e0",
+                "#80f8fc",
+                "#cef280",
+                "#a2f48d",
+                "#c1a8f7",
+                "#fcdbb5",
+                "#f4ab9c",
+                "#9af4b9",
+                "#eea3ff",
+                "#68cee8",
+                "#cbff9b",
+                "#fca4cd",
+                "#77dff4",
+                "#a7f28c",
+                "#ff8eae",
+                "#fcf6b5"
+            ];
+            setInterval(() => {
+                // Randomized configs
+                let color = Math.floor(Math.random() * colors.length);
+                let particlesNum = Math.floor(Math.random() * 1000) + 300;
+                let particlesSize = Math.floor(Math.random() * 100) + 20; 
+
+                window.pJSDom[0].pJS.particles.number.value = particlesNum;
+                window.pJSDom[0].pJS.particles.color.value = colors[color];
+                window.pJSDom[0].pJS.tmp.obj.size_value = particlesSize;
+                window.pJSDom[0].pJS.fn.particlesRefresh();
+            }, 1000);
+
+            onmousemove = function (e) { console.log("mouse location:", e.clientX, e.clientY) }
+        </script>
+    </body>
+</html>

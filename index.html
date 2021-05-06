@@ -30,7 +30,7 @@
                if (mouseX < midScreenX && mouseY < midScreenY && prevState !== 1) {
                     // Upper left (1)
                     eye.style.setProperty("--eye-left", `${17 - 10}px`);
-                    eye.style.setProperty("--eye-top", `${17 - 10}px`);
+                    eye.style.setProperty("--eye-top", `${17 - 8}px`);
                     prevState = 1;
                 } else if (mouseX < midScreenX && mouseY > midScreenY && prevState !== 2) {
                     // Lower left (2)
@@ -40,7 +40,7 @@
                 } else if (mouseX > midScreenX && mouseY < midScreenY && prevState !== 3) {
                     // Upper right (3)
                     eye.style.setProperty("--eye-left", `${17 + 10}px`);
-                    eye.style.setProperty("--eye-top", `${17 - 10}px`);
+                    eye.style.setProperty("--eye-top", `${17 - 8}px`);
                     prevState = 3;
                 } else if (mouseX > midScreenX && mouseY > midScreenY && prevState !== 4) {
                     // Lower right (4)

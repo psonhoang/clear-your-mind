@@ -27,33 +27,26 @@
                 let mouseY = e.clientY;
                 let midScreenX = screen.width / 2;
                 let midScreenY = screen.height / 2;
-                if (Math.abs(midScreenX - mouseX) <= 10 && Math.abs(midScreenY - mouseY) <= 10 && prevState !== 0) {
-                    // Close to center
-                    eye.style.setProperty("--eye-left", `17px`);
-                    eye.style.setProperty("--eye-top", `17px`);
-                    prevState = 0;
-                } else {
-                    if (mouseX < midScreenX && mouseY < midScreenY && prevState !== 1) {
-                        // Upper left (1)
-                        eye.style.setProperty("--eye-left", `${17 - 10}px`);
-                        eye.style.setProperty("--eye-top", `${17 - 10}px`);
-                        prevState = 1;
-                    } else if (mouseX < midScreenX && mouseY > midScreenY && prevState !== 2) {
-                        // Lower left (2)
-                        eye.style.setProperty("--eye-left", `${17 - 10}px`);
-                        eye.style.setProperty("--eye-top", `${17 + 10}px`);
-                        prevState = 2;
-                    } else if (mouseX > midScreenX && mouseY < midScreenY && prevState !== 3) {
-                        // Upper right (3)
-                        eye.style.setProperty("--eye-left", `${17 + 10}px`);
-                        eye.style.setProperty("--eye-top", `${17 - 10}px`);
-                        prevState = 3;
-                    } else if (mouseX > midScreenX && mouseY > midScreenY && prevState !== 4) {
-                        // Lower right (4)
-                        eye.style.setProperty("--eye-left", `${17 - 10}px`);
-                        eye.style.setProperty("--eye-top", `${17 + 10}px`);
-                        prevState = 4;
-                    }
+               if (mouseX < midScreenX && mouseY < midScreenY && prevState !== 1) {
+                    // Upper left (1)
+                    eye.style.setProperty("--eye-left", `${17 - 10}px`);
+                    eye.style.setProperty("--eye-top", `${17 - 10}px`);
+                    prevState = 1;
+                } else if (mouseX < midScreenX && mouseY > midScreenY && prevState !== 2) {
+                    // Lower left (2)
+                    eye.style.setProperty("--eye-left", `${17 - 10}px`);
+                    eye.style.setProperty("--eye-top", `${17 + 10}px`);
+                    prevState = 2;
+                } else if (mouseX > midScreenX && mouseY < midScreenY && prevState !== 3) {
+                    // Upper right (3)
+                    eye.style.setProperty("--eye-left", `${17 + 10}px`);
+                    eye.style.setProperty("--eye-top", `${17 - 10}px`);
+                    prevState = 3;
+                } else if (mouseX > midScreenX && mouseY > midScreenY && prevState !== 4) {
+                    // Lower right (4)
+                    eye.style.setProperty("--eye-left", `${17 - 10}px`);
+                    eye.style.setProperty("--eye-top", `${17 + 10}px`);
+                    prevState = 4;
                 }
             });
 
